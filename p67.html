@@ -1,0 +1,21 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <img id="image" src="img/HGD1.png" width="300" height="200">
+        <script>
+            var han=1;
+            function changeImage() {
+                if(han==2) {
+                document.getElementById("image").src="img/HGD1.png";
+                han=1;
+            } else { 
+            document.getElementById("image").src="img/HGD2.jpg";
+            han=2;
+            }
+        }
+        </script>
+        <input type="button" onclick="changeImage()" value="click!"/>
+    </body>
+</html>
