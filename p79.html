@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MKn5NWVBEuQXJE7TSKSgPUmMiSCmVTfCsR+VSSeQpHnoyJQZZFn/kBn+Ht5jZDPQ" crossorigin="anonymous">
+        <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-+PW0IDVGGwmpaBQvcXY+W0BcpHpITFB3dSfSoGvDdHtLbrLpSbpGcvtQRM/BJpz+" crossorigin="anonymous"></script>
+        <script>
+            var expression="";
+
+            function add(character) {
+                expression = expression+character;
+                document.getElementById("display").value=expression;
+            }
+            function compute() {
+                expression="("+expression+")";
+                document.getElementById("display").value=eval(expression);
+            }
+            function clearDisplay() {
+                expression=expression.slice(0,expression.length-1);
+                document.getElementById("display").value=expression;
+            }
+            function AclearDisplay() {
+                expression="";
+                document.getElementById("display").value=0;
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <input id="display" class="form-label" value="0" size="13">
+            <div class="row">
+                <div class="col">
+                    <input type="button" class="theme-secondary btn-outline" value="7" onclick="add('7')">
+                </div>
+                <div class="col">
+                    <input type="button" class="theme-secondary btn-outline" value="8" onclick="add('8')">
+                </div>
+                <div class="col">
+                    <input type="button" class="theme-secondary btn-outline" value="9" onclick="add('9')">
+                </div>
+                <div class="col">
+                    <input type="button" class="theme-secondary btn-outline" value="/" onclick="add('/')">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="button" class="theme-secondary btn-outline" value="4" onclick="add('4')">
+                </div>
+                <div class="col">
+                    <input type="button" class="theme-secondary btn-outline" value="5" onclick="add('5')">
+                </div>
+                <div class="col">
+                    <input type="button" class="theme-secondary btn-outline" value="6" onclick="add('6')">
+                </div>
+                <div class="col">
+                    <input type="button" class="theme-secondary btn-outline" value="*" onclick="add('*')">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="button" class="theme-secondary btn-outline" value="1" onclick="add('1')">
+                </div>
+                <div class="col">
+                    <input type="button" class="theme-secondary btn-outline" value="2" onclick="add('2')">
+                </div>
+                <div class="col">
+                    <input type="button" class="theme-secondary btn-outline" value="3" onclick="add('3')">
+                </div>
+                <div class="col">
+                    <input type="button" class="theme-secondary btn-outline" value="-" onclick="add('-')">
+                </div>
+            </div>
+                    <br>
+                    <input type="button" class="theme-secondary btn-outline" value="%" onclick="add('%')">
+                    <input type="button" class="theme-secondary btn-outline" value="0" onclick="add('0')">
+                    <input type="button" class="theme-secondary btn-outline" value=" . " onclick="add('.')">
+                    <input type="button" class="theme-secondary btn-outline" value="+" onclick="add('+')">
+                    <br>
+                    <input type="button" class="theme-warning btn-outline" value="X" onclick="clearDisplay()">
+                    <input type="button" class="theme-warning btn-outline" value="AC" onclick="AclearDisplay()">
+                    <input type="button" class="theme-warning btn-outline" value="Enter" name="enter" onclick="compute()">
+                </div>
+        </form>
+    </body>
+</html>
